@@ -6,10 +6,12 @@ public class FactorialCalculatorTest {
     public void factorialOfZero() {
         assertEquals(FactorialCalculator.factorial(0), 1);
     }
+
     @Test
     public void factorialOfPositive() {
         assertEquals(FactorialCalculator.factorial(5), 120);
     }
+
     @Test(expectedExceptions = IllegalArgumentException.class)
     public void factorialThrowsForNegative() {
         FactorialCalculator.factorial(-1);
