@@ -1,11 +1,19 @@
-import org.testng.annotations.Test;
-import static org.testng.Assert.*;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class IntegerComparatorTest {
     @Test
-    public void compareGreater() { assertEquals(IntegerComparator.compare(5, 3), "5 > 3"); }
+    public void compareGreater() {
+        assertEquals("5 > 3", IntegerComparator.compare(5, 3));
+    }
+
     @Test
-    public void compareLess() { assertEquals(IntegerComparator.compare(2, 4), "2 < 4"); }
+    public void compareLess() {
+        assertEquals("2 < 4", IntegerComparator.compare(2, 4));
+    }
+
     @Test
-    public void compareEqual() { assertEquals(IntegerComparator.compare(7, 7), "7 = 7"); }
+    public void compareEqual() {
+        assertEquals("7 = 7", IntegerComparator.compare(7, 7));
+    }
 }

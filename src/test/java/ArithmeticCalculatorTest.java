@@ -1,17 +1,29 @@
-import org.testng.annotations.Test;
-import static org.testng.Assert.*;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ArithmeticCalculatorTest {
     @Test
-    public void testAdd() { assertEquals(ArithmeticCalculator.add(3, 4), 7); }
+    public void testAdd() {
+        assertEquals(7, ArithmeticCalculator.add(3, 4));
+    }
+
     @Test
-    public void testSubtract() { assertEquals(ArithmeticCalculator.subtract(5, 4), 1); }
+    public void testSubtract() {
+        assertEquals(1, ArithmeticCalculator.subtract(5, 4));
+    }
+
     @Test
-    public void testMultiply() { assertEquals(ArithmeticCalculator.multiply(4, 5), 20); }
+    public void testMultiply() {
+        assertEquals(20, ArithmeticCalculator.multiply(4, 5));
+    }
+
     @Test
-    public void testDivide() { assertEquals(ArithmeticCalculator.divide(5, 2), 2.5); }
-    @Test(expectedExceptions = IllegalArgumentException.class)
+    public void testDivide() {
+        assertEquals(2.5, ArithmeticCalculator.divide(5, 2));
+    }
+
+    @Test
     public void divideByZeroThrows() {
-        ArithmeticCalculator.divide(5, 0);
+        assertThrows(IllegalArgumentException.class, () -> ArithmeticCalculator.divide(5, 0));
     }
 }

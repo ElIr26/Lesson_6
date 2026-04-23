@@ -1,13 +1,14 @@
-import org.testng.annotations.Test;
-import static org.testng.Assert.*;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TriangleAreaCalculatorTest {
     @Test
     public void areaValid() {
-        assertEquals(TriangleAreaCalculator.area(5, 4), 10.0, 0.001);
+        assertEquals(10.0, TriangleAreaCalculator.area(5, 4));
     }
-    @Test(expectedExceptions = IllegalArgumentException.class)
+
+    @Test
     public void areaThrowsForZero() {
-        TriangleAreaCalculator.area(0, 5);
+        assertThrows(IllegalArgumentException.class, () -> TriangleAreaCalculator.area(0, 5));
     }
 }

@@ -1,17 +1,19 @@
-import org.testng.annotations.Test;
-import static org.testng.Assert.*;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class FactorialCalculatorTest {
     @Test
     public void factorialOfZero() {
-        assertEquals(FactorialCalculator.factorial(0), 1);
+        assertEquals(1, FactorialCalculator.factorial(0));
     }
+
     @Test
     public void factorialOfPositive() {
-        assertEquals(FactorialCalculator.factorial(5), 120);
+        assertEquals(120, FactorialCalculator.factorial(5));
     }
-    @Test(expectedExceptions = IllegalArgumentException.class)
+
+    @Test
     public void factorialThrowsForNegative() {
-        FactorialCalculator.factorial(-1);
+        assertThrows(IllegalArgumentException.class, () -> FactorialCalculator.factorial(-1));
     }
 }
